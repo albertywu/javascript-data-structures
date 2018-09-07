@@ -32,7 +32,37 @@ class BinarySearchTree {
   }
 
   delete(key) {
+    function _delete(node, key) {
+      if (node === null) return
+      if (key < node.key) {
+        node.left = _delete(node.left, key)
+      } else if (key > node.key) {
+        node.right = _delete(node.right, key)
+      } else { // node.key === key
+        if (node.right === null) return node.left
+        if (node.left === null) return node.right
 
+        let t = node
+        node = min(t.right)
+        node.right = removeMin(t.right)
+        node.left = t.left
+      }
+      return node
+    }
+
+    function removeMin(node) {
+      if (node.left === null) return node.right
+      node.left = removeMin(node.left)
+      return node
+    }
+
+    function min(node) {
+      let x = node
+      while (x.left !== null) x = x.left
+      return x
+    }
+
+    this.root = _delete(this.root, key)
   }
 
   contains(key) {
@@ -83,4 +113,21 @@ test('BinarySearchTree#get', t => {
   t.is(bst.get('a'), 100)
   t.is(bst.get('c'), 42)
   t.is(bst.get('d'), 22)
+})
+
+test('BinarySearchTree#delete', t => {
+  let bst = new BinarySearchTree(
+    { key: 'c', value: 42 },
+    { key: 'a', value: 100 },
+    { key: 'd', value: 22 }
+  )
+  t.is(bst.get('a'), 100)
+  t.is(bst.get('c'), 42)
+  t.is(bst.get('d'), 22)
+
+  bst.delete('a')
+  bst.delete('d')
+  t.is(bst.get('d'), null)
+  t.is(bst.get('a'), null)
+  t.is(bst.get('c'), 42)
 })
