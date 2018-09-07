@@ -6,6 +6,13 @@ Here you'll find:
 * clean ES6 implementations of classic data structures
 * some classic applications of these data structures
 
+### LinkedList
+- [ ] API: `add, isEmpty, head, removeHead`
+- [ ] Applications:
+  - [ ] stacks
+  - [ ] queues
+  - [ ] hash tables w/chaining
+
 ### Stack
 - [x] API: `push, pop, peek, isEmpty, toString`
 - [ ] Applications:
