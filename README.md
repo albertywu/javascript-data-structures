@@ -4,6 +4,7 @@ This is my attempt at bridging the gap between data structures and applications 
 
 Here you'll find:
 * clean ES6 implementations of classic data structures
+* [TODO] example applications that use these data structures
 
 ### [LinkedList](linkedList/LinkedList.js)
 - [x] API
