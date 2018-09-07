@@ -5,19 +5,19 @@ This is my attempt at bridging the gap between data structures and applications 
 Here you'll find:
 * clean ES6 implementations of classic data structures
 
-### LinkedList
+### [LinkedList](linkedList/LinkedList.js)
 - [x] API: `addHead, removeHead, addTail, removeTail, isEmpty, first, last, reverse`
 - [x] tests
 
 ---
 
-### Stack
+### [Stack](stack/Stack.js)
 - [x] API: `push, pop, peek, isEmpty, toString`
 - [x] tests
 
 ---
 
-### Queue
+### [Queue](queue/Queue.js)
 - [x] API: `enqueue, dequeue, peek, isEmpty, toString`
 - [x] tests
 
