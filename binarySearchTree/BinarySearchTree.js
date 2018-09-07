@@ -66,15 +66,18 @@ class BinarySearchTree {
   }
 
   contains(key) {
-
+    return this.get(key) !== null
   }
 
   isEmpty() {
-
+    return this.root === null
   }
 
   size() {
-
+    function _size(node) {
+      return node === null ? 0 : 1 + _size(node.left) + _size(node.right)
+    }
+    return _size(this.root)
   }
 
   keys() {
@@ -90,6 +93,19 @@ class Node {
     this.left = null
     this.right = null
   }
+}
+
+class Queue {
+  constructor(...items) {
+    this.data = []
+    for (let item of items) {
+      this.enqueue(item)
+    }
+  }
+
+  enqueue(item) { this.data.unshift(item) }
+  dequeue(item) { return this.data.pop() }
+  isEmpty() { return this.data.length === 0 }
 }
 
 import { test } from 'ava'
@@ -130,4 +146,16 @@ test('BinarySearchTree#delete', t => {
   t.is(bst.get('d'), null)
   t.is(bst.get('a'), null)
   t.is(bst.get('c'), 42)
+})
+
+test('BinarySearchTree#size', t => {
+  let bst = new BinarySearchTree(
+    { key: 'c', value: 42 },
+    { key: 'a', value: 100 },
+    { key: 'd', value: 22 }
+  )
+  t.is(bst.size(), 3)
+  bst.delete('d')
+  bst.delete('a')
+  t.is(bst.size(), 1)
 })
