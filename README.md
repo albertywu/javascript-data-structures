@@ -6,32 +6,52 @@ Here you'll find:
 * clean ES6 implementations of classic data structures
 
 ### [LinkedList](linkedList/LinkedList.js)
-- [x] API: `addHead, removeHead, addTail, removeTail, isEmpty, first, last, reverse`
+- [x] API
+  - [x] addHead
+  - [x] removeHead
+  - [x] addTail
+  - [x] removeTail
+  - [x] isEmpty
+  - [x] first
+  - [x] last
+  - [x] reverse
 - [x] tests
 
 ---
 
 ### [Stack](stack/Stack.js)
-- [x] API: `push, pop, peek, isEmpty, toString`
+- [x] API
+  - [x] push
+  - [x] pop
+  - [x] peek
+  - [x] isEmpty
 - [x] tests
 
 ---
 
 ### [Queue](queue/Queue.js)
-- [x] API: `enqueue, dequeue, peek, isEmpty, toString`
+- [x] API
+  - [x] enqueue
+  - [x] dequeue
+  - [x] peek
+  - [x] isEmpty
 - [x] tests
+
+---
+
+### [BinarySearchTree](binarySearchTree/BinarySearchTree.js)
+- [ ] API
+  - [x] put
+  - [x] get
+  - [ ] delete
+  - [ ] keys
+- [ ] Traversal: `inorder, preorder, postorder` traversal
 
 ---
 
 ### Priority Queues / Binary Heap
 - [ ] MaxPQ API: `insert, delMax, isEmpty, max, size, toString`
 - [ ] MinPQ API: `insert, delMin, isEmpty, min, size, toString`
-  
----
-
-### BinarySearchTree
-- [ ] API: `put, get, delete, keys, toString`
-- [ ] Traversal: `inorder, preorder, postorder` traversal
 
 ---
 
