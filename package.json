@@ -1,0 +1,22 @@
+{
+  "name": "jsds",
+  "version": "1.0.0",
+  "description": "data structures in javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "ava **/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertywu/jsds.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/albertywu/jsds/issues"
+  },
+  "homepage": "https://github.com/albertywu/jsds#readme",
+  "devDependencies": {
+    "ava": "^0.25.0"
+  }
+}
