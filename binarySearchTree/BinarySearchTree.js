@@ -24,8 +24,8 @@ class BinarySearchTree {
   get(key) {
     let x = this.root
     while (x !== null) {
-      if (x.key < key) x = x.left // traverse left
-      else if (x.key > key) x = x.right // traverse right
+      if (key < x.key) x = x.left // traverse left
+      else if (key > x.key) x = x.right // traverse right
       else return x.value // found it!
     }
     return x
@@ -72,4 +72,15 @@ test('BinarySearchTree#put', t => {
   t.is(bst.get('c'), 42)
   bst.put('c', 44)
   t.is(bst.get('c'), 44)
+})
+
+test('BinarySearchTree#get', t => {
+  let bst = new BinarySearchTree(
+    { key: 'c', value: 42 },
+    { key: 'a', value: 100 },
+    { key: 'd', value: 22 }
+  )
+  t.is(bst.get('a'), 100)
+  t.is(bst.get('c'), 42)
+  t.is(bst.get('d'), 22)
 })
