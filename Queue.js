@@ -1,6 +1,9 @@
 class Queue {
-  constructor() {
+  constructor(...items) {
     this.data = []
+    for (let item of items) {
+      this.enqueue(item)
+    }
   }
 
   enqueue(item) {
@@ -23,10 +26,7 @@ class Queue {
 import { test } from 'ava'
 
 test('Queue', t => {
-  let q = new Queue()
-  q.enqueue(1)
-  q.enqueue(2)
-  q.enqueue(3)
+  let q = new Queue(1, 2, 3)
   t.is(q.dequeue(), 1)
   t.is(q.dequeue(), 2)
   t.is(q.peek(), 3)

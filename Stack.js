@@ -1,6 +1,9 @@
 class Stack {
-  constructor() {
+  constructor(...items) {
     this.data = []
+    for (let item of items) {
+      this.push(item)
+    }
   }
 
   push(item) {
@@ -22,10 +25,7 @@ class Stack {
 
 import { test } from 'ava'
 test('Stack', t => {
-  let s = new Stack()
-  s.push(1)
-  s.push(2)
-  s.push(3)
+  let s = new Stack(1, 2, 3)
   t.is(s.peek(), 3)
   s.pop()
   t.is(s.peek(), 2)
