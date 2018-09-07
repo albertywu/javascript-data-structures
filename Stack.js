@@ -15,8 +15,8 @@ class Stack {
     return this.data[this.data.length - 1]
   }
 
-  size() {
-    return this.data.length
+  isEmpty() {
+    return this.data.length === 0
   }
 }
 
@@ -31,6 +31,8 @@ test('Stack', t => {
   t.is(s.peek(), 2)
   s.pop()
   t.is(s.peek(), 1)
+  t.is(s.isEmpty(), false)
   s.pop()
   t.is(s.peek(), undefined)
+  t.is(s.isEmpty(), true)
 })
