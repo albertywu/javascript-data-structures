@@ -41,12 +41,16 @@ Here you'll find:
 ---
 
 ### [BinarySearchTree](binarySearchTree/BinarySearchTree.js)
-- [ ] API
+- [x] API
   - [x] put
   - [x] get
-  - [ ] delete
-  - [ ] keys
-- [ ] Traversal: `inorder, preorder, postorder` traversal
+  - [x] delete
+  - [x] keys
+- [x] Traversal
+  - [x] inorder
+  - [x] preorder
+  - [x] postorder
+  - [x] bfs
 
 ---
 

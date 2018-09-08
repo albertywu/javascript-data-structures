@@ -6,20 +6,21 @@ class Stack {
     }
   }
 
-  push(item) {
-    this.data.push(item)
-  }
+  push(item) { this.data.push(item) }
 
-  pop() {
-    return this.data.pop()
-  }
+  pop() { return this.data.pop() }
 
-  peek() {
-    return this.data[this.data.length - 1]
-  }
+  peek() { return this.data[this.data.length - 1] }
 
-  isEmpty() {
-    return this.data.length === 0
+  isEmpty() { return this.data.length === 0 }
+
+  [Symbol.iterator]() {
+    let idx = this.data.length - 1
+    return {
+      next: () => idx > -1
+        ? { value: this.data[idx--], done: false }
+        : { done: true }
+    }
   }
 }
 
@@ -35,4 +36,13 @@ test('Stack', t => {
   s.pop()
   t.is(s.peek(), undefined)
   t.is(s.isEmpty(), true)
+})
+
+test('Stack iterator', t => {
+  let s = new Stack(1, 2, 3)
+  let result = []
+  for (let item of s) {
+    result.push(item)
+  }
+  t.deepEqual(result, [3, 2, 1])
 })
